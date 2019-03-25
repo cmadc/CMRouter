@@ -63,6 +63,18 @@
 
 - (void)showViewController:(NSString *)viewControllerName param:(NSDictionary *)param;
 
+
+
+/**
+ push or present 一个 viewcontroller
+
+ @param  viewControllerName 将要显示的viewController 的类名
+ @param param 目标 viewController  需要的参数
+ @param animated 是否显示动画
+ */
+
+- (void)showViewController:(NSString *)viewControllerName param:(NSDictionary *)param animated:(BOOL)animated;
+
 /**
  *  push or present 一个 viewcontroller
  *

@@ -35,6 +35,11 @@
 
 - (void)showViewController:(NSString *)viewControllerName param:(NSDictionary *)param
 {
+    [self showViewController:viewControllerName param:param animated:YES];
+}
+
+- (void)showViewController:(NSString *)viewControllerName param:(NSDictionary *)param animated:(BOOL)animated{
+    
     if (viewControllerName == nil) {
         
         NSLog(@"viewControllerName is nil");
@@ -44,22 +49,22 @@
     dispatch_async(mainQueue, ^{
         
         UINavigationController *nvc = [[self class] expectedVisibleNavigationController];
-        
         UIViewController *vc = [self getObjectWithClassName:viewControllerName];
         
         if (vc) {
             
             if (nvc) {
                 
-                [self pushViewController:vc parameters:param atNavigationController:nvc animated:YES];
+                [self pushViewController:vc parameters:param atNavigationController:nvc animated:animated];
                 
             }else
             {
-                [self pressntVController:vc parameters:param animated:YES];
+                [self pressntVController:vc parameters:param animated:animated];
             }
         }
         
     });
+    
 }
 
 /**

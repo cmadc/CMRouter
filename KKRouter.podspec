@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
 
-  s.name         = "CMRouter"
-  s.version      = "0.0.1"
+  s.name         = "KKRouter"
+  s.version      = "0.0.2"
   s.summary      = "router."
 
   s.description  = <<-DESC
